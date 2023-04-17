@@ -1,15 +1,20 @@
 import instance from "./instance"
-import { GetRandomMealDTO } from "../types/service";
+import { GetAllMealDTO } from "../types/service";
 
 class Meal {
-    getRandomMeal = async (): Promise<GetRandomMealDTO> => {
-        const res = await instance.get(`/random.php`);
+    getAllMeal = async (): Promise<GetAllMealDTO> => {
+        const res = await instance.get(`search.php?f=b`);
+        return res.data;
+    }
+
+    getMeal = async (idMeal: any): Promise<GetAllMealDTO> => {
+        const res = await instance.get(`lookup.php?i=${idMeal}`);
         return res.data;
     }
 }
 
-const MealService = new Meal()
+const MealService = new Meal();
 
 export default MealService;
 
-MealService.getRandomMeal();
+MealService.getAllMeal();
