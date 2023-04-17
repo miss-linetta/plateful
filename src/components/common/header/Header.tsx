@@ -12,8 +12,8 @@ const Header = () => {
         Plateful <MealIcon />
       </Typography>
       <Box sx={style.actions}>
-        <SearchIcon sx={{ fontSize: 50 }} />
-        <FavoriteBorderIcon sx={{ fontSize: 50 }} />
+        <SearchIcon sx={{ fontSize: 40 }} />
+        <FavoriteBorderIcon sx={{ fontSize: 40 }} />
       </Box>
     </Box>
   );
