@@ -1,11 +1,12 @@
 import { SxProps, Theme } from "@mui/material";
 
 export const container: SxProps<Theme> = {
-    width: '250px',
+    width: '300px',
+    height: '380px'
 }
 
 export const button: SxProps<Theme> = {
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
 }
 
 export const info: SxProps<Theme> = {

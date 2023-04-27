@@ -8,3 +8,13 @@ export const pagination: SxProps<Theme> = {
         justifyItems: 'center'
     }
   };
+
+  export const container: SxProps<Theme> = {
+    width: '100%',
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '20px',
+    padding: '40px'
+}

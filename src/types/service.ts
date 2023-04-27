@@ -1,6 +1,5 @@
 export interface GetAllMealDTO {
-    meals: 
-        {
+    
             idMeal: string;
             strMeal: string;
             strDrinkAlternate: string;
@@ -54,6 +53,16 @@ export interface GetAllMealDTO {
             strImageSource: string;
             strCreativeCommonsConfirmed: string;
             dateModified: string;
-        }[];
-    
+
+}
+
+export interface GetMealDTO {
+  
+
+        idMeal: string;
+        strMeal: string;
+        strCategory: string;
+        strArea: string;
+        strMealThumb: string;
+        strTags: string;
 }
