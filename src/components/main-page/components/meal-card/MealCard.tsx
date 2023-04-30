@@ -1,22 +1,17 @@
 import {
   Box,
-  Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
-  IconButton,
   Link,
   Typography,
 } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import * as style from './MealCard.styles';
 import { GetMealDTO } from '@/types/service';
 import router from 'next/router';
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 
 export type CardProps = GetMealDTO;
 

@@ -1,7 +1,5 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
-import { red } from '@mui/material/colors';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 const queryClient = new QueryClient();

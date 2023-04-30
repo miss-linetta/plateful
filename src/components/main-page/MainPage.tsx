@@ -6,8 +6,7 @@ import MealCard from '@/components/main-page/components/meal-card';
 import MealService from '@/services/meals.service';
 import { CircularProgress, Typography, Box } from '@mui/material';
 import { useQuery } from 'react-query';
-import { GetMealDTO } from '@/types/service';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import usePagination from './components/pagination/usePagination';
 
 const MainPage: FC = () => {

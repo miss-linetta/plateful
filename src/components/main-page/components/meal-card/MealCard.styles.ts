@@ -6,6 +6,10 @@ export const container: SxProps<Theme> = {
     height: '360px',
     h5: {
         textDecoration: 'none' 
+    },
+    '&:hover': {
+        cursor: 'pointer',
+        transform: 'scale3d(1.006, 1.006, 1)',
     }
 }
 

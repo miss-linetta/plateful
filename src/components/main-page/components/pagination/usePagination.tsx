@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 
-const usePagination = (data, itemsPerPage) => {
+const usePagination = (data: any, itemsPerPage: number) => {
   const [currentPage, setCurrentPage] = useState(1);
 
   const maxPage = useMemo(() => {
@@ -15,7 +15,7 @@ const usePagination = (data, itemsPerPage) => {
     return data.slice(begin, end);
   }, [currentPage, data, itemsPerPage]);
 
-  const handlePageChange = (event, value) => {
+  const handlePageChange = (event: any, value: number) => {
     setCurrentPage(value);
     window.scrollTo({ top: 0 });
   };
