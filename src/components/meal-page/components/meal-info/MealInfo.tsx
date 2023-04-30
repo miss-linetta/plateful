@@ -19,7 +19,6 @@ import { GetAllMealDTO } from '@/types/service';
 import { useQuery } from 'react-query';
 import MealService from '@/services/meals.service';
 import { useRouter } from 'next/router';
-import VideoPlayer from '../video-player/VideoPlayer';
 
 const MealInfo: FC = () => {
   const query = useRouter();
@@ -66,19 +65,28 @@ const MealInfo: FC = () => {
 
   const videoURL = meal?.meals[0].strYoutube.replace('watch?v=', 'embed/');
 
-  if (isLoading) return <CircularProgress />;
+  if (isLoading)
+    return (
+      <Box sx={style.noData}>
+        <CircularProgress />
+      </Box>
+    );
 
-  if (isError) return <Typography>Error!</Typography>;
+  if (isError)
+    return (
+      <Box sx={style.noData}>
+        <Typography>Error!</Typography>;
+      </Box>
+    );
 
   return (
     <Box>
       <Box sx={style.container}>
         <Box sx={style.mainInfo}>
-          <Box sx={style.titleContainer}>
+          <Box>
             <Stack direction="row" spacing={1}>
               <Chip label={meal?.meals[0].strCategory} color="primary" />
               <Chip label={meal?.meals[0].strArea} color="success" />
-              <Chip label={meal?.meals[0].strTags} color="success" />
             </Stack>
             <Typography sx={style.title} variant="h2">
               {meal?.meals[0].strMeal}
@@ -88,7 +96,9 @@ const MealInfo: FC = () => {
               {ingredients.map((item, idx) => {
                 return (
                   <List sx={style.ingredients}>
-                    <Typography variant="span">{idx + 1}) </Typography>
+                    <Typography key={idx} variant="span">
+                      {idx + 1}){' '}
+                    </Typography>
                     {item}
                   </List>
                 );

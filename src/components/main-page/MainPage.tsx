@@ -7,7 +7,8 @@ import MealService from '@/services/meals.service';
 import { CircularProgress, Typography, Box } from '@mui/material';
 import { useQuery } from 'react-query';
 import { GetMealDTO } from '@/types/service';
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import usePagination from './components/pagination/usePagination';
 
 const MainPage: FC = () => {
   const {
@@ -18,28 +19,47 @@ const MainPage: FC = () => {
     refetchOnWindowFocus: false,
   });
 
-  if (isLoading) return <CircularProgress />;
+  const { currentPage, handlePageChange, maxPage, currentData } = usePagination(
+    meal?.meals,
+    10
+  );
 
-  if (isError) return <Typography>Error!</Typography>;
+  if (isLoading)
+    return (
+      <Box sx={style.noData}>
+        <CircularProgress />
+      </Box>
+    );
+  if (isError)
+    return (
+      <Box sx={style.noData}>
+        <Typography>Error!</Typography>
+      </Box>
+    );
   return (
     <PageLayout>
       <Box sx={style.container}>
-        {meal?.meals &&
-          meal?.meals.map((meal) => {
-            return (
-              <MealCard
-                key={meal.idMeal}
-                strMealThumb={meal.strMealThumb}
-                strMeal={meal.strMeal}
-                strCategory={meal.strCategory}
-                strArea={meal.strArea}
-                idMeal={meal.idMeal}
-              />
-            );
-          })}
+        {currentData.map((meal: any) => {
+          return (
+            <MealCard
+              key={meal.idMeal}
+              strMealThumb={meal.strMealThumb}
+              strMeal={meal.strMeal}
+              strCategory={meal.strCategory}
+              strArea={meal.strArea}
+              idMeal={meal.idMeal}
+            />
+          );
+        })}
       </Box>
+
       <Stack sx={style.pagination} spacing={2}>
-        <Pagination count={10} color="primary" />
+        <Pagination
+          onChange={handlePageChange}
+          page={currentPage}
+          count={maxPage}
+          color="primary"
+        />
       </Stack>
     </PageLayout>
   );

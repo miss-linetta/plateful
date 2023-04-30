@@ -1,21 +1,20 @@
-import { SxProps, Theme } from '@mui/material';
+import { SxProps, Theme, useMediaQuery } from '@mui/material';
 
 export const container: SxProps<Theme> = {
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
-  paddingTop: '20px',
-  paddingLeft: '40px',
-  paddingRight: '40px',
+  justifyContent: 'center',
+  paddingTop: '40px',
+  paddingLeft: '80px',
+  paddingRight: '80px',
   position: 'relative',
-  //   h1: {
-  //     width: '50%',
-  //     textAlign: 'center',
-  //     transform: 'translateX(50%)',
-  //   },
-  //   div: {
-  //     width: '50%',
-  //   },
+  a: {
+    textDecoration: 'none',
+    color: 'black',
+    h1: {
+      textAlign: 'center',
+    },
+  },
 };
 
 export const actions: SxProps<Theme> = {
