@@ -35,12 +35,9 @@ export const rightContainer: SxProps<Theme> = {
         width: '100%',
     },
     img: {
-        paddingTop: '60px',
         borderRadius: '5px',
         border: 'none',
-        '@media(max-width: 1024px)' : {
-            paddingTop: '0px',
-        },
+        
     }
 }
 
