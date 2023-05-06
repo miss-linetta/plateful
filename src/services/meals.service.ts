@@ -16,6 +16,6 @@ class Meal {
 
 const MealService = new Meal();
 
-export default MealService;
-
 MealService.getAllMeal();
+
+export default MealService;

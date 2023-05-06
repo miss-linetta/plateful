@@ -24,19 +24,9 @@ const PageLayout = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div>
-          {hasHeader && (
-            <>
-              <div>{hasHeader && <Header />}</div>
-            </>
-          )}
-          {children}
-          {hasFooter && (
-            <div>
-              <Footer />
-            </div>
-          )}
-        </div>
+        {hasHeader && <>{hasHeader && <Header />}</>}
+        {children}
+        {hasFooter && <Footer />}
       </main>
     </>
   );

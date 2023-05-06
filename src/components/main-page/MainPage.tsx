@@ -4,10 +4,12 @@ import Stack from '@mui/material/Stack';
 import * as style from './MainPage.styles';
 import MealCard from '@/components/main-page/components/meal-card';
 import MealService from '@/services/meals.service';
-import { CircularProgress, Typography, Box } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import { useQuery } from 'react-query';
 import { FC } from 'react';
-import usePagination from './components/pagination/usePagination';
+import usePagination from '../../hooks/pagination/usePagination';
+import Loading from '../common/no-data/Loading';
+import Error from '../common/no-data/Error';
 
 const MainPage: FC = () => {
   const {
@@ -23,20 +25,10 @@ const MainPage: FC = () => {
     10
   );
 
-  if (isLoading)
-    return (
-      <Box sx={style.noData}>
-        <CircularProgress />
-      </Box>
-    );
-  if (isError)
-    return (
-      <Box sx={style.noData}>
-        <Typography>Error!</Typography>
-      </Box>
-    );
+  if (isLoading) return <Loading />;
+  if (isError) return <Error />;
   return (
-    <PageLayout>
+    <Box>
       <Box sx={style.container}>
         {currentData.map((meal: any) => {
           return (
@@ -60,7 +52,7 @@ const MainPage: FC = () => {
           color="primary"
         />
       </Stack>
-    </PageLayout>
+    </Box>
   );
 };
 

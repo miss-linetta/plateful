@@ -57,11 +57,11 @@ export interface GetAllMealDTO {
 }
 
 export interface GetMealDTO {
-        meals: {
+
         idMeal: string;
         strMeal: string;
         strCategory: string;
         strArea: string;
         strMealThumb: any;
-        }[]
+
 }
