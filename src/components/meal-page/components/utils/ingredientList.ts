@@ -3,7 +3,7 @@ export function ingredientList(data: any) {
       return [];
     }
 
-    let propertiesArr = Object.values(data);
+    const propertiesArr = Object.values(data);
 
     let ingredients = [];
 

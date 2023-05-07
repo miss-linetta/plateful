@@ -11,12 +11,6 @@ export const container: SxProps<Theme> = {
     } 
 }
 
-export const title: SxProps<Theme> = {
-    paddingTop: '20px',
-    paddingBottom: '20px',
-    
-}
-
 export const mainInfo: SxProps<Theme> = {
     display: 'flex',
     flexGrow: '1',

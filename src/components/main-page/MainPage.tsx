@@ -1,10 +1,9 @@
-import PageLayout from '@/components/common/page-layout/PageLayout';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import * as style from './MainPage.styles';
 import MealCard from '@/components/main-page/components/meal-card';
 import MealService from '@/services/meals.service';
-import { Typography, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import { useQuery } from 'react-query';
 import { FC } from 'react';
 import usePagination from '../../hooks/pagination/usePagination';
